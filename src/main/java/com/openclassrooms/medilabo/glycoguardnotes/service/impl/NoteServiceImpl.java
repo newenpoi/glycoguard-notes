@@ -32,4 +32,12 @@ public class NoteServiceImpl implements NoteService {
 		return noteDao.findByPatId(patId);
 	}
 
+	/**
+	 * Ajoute la note au patient.
+	 */
+	@Override
+	public Note ajouterNote(Note note) {
+		return noteDao.save(note);
+	}
+
 }
