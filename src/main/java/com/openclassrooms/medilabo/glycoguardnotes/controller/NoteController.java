@@ -22,6 +22,11 @@ public class NoteController {
 	
 	private final NoteService noteService;
 	
+	/**
+	 * Récupère une liste de notes d'un patient spécifié par son identifiant unique.
+	 * @param id
+	 * @return Notes ou Rien
+	 */
 	@GetMapping("/notes/{id}")
 	public ResponseEntity<List<Note>> getNotesPatient(@PathVariable Long id) {
 		List<Note> notes = noteService.recupererNotesPatient(id);
@@ -32,6 +37,12 @@ public class NoteController {
 		return ResponseEntity.ok(notes);
 	}
 	
+	/**
+	 * Ajoute une note pour un patient.
+	 * Notre identifiant unique du patient se trouve dans la propriété patId de la note.
+	 * @param newNote
+	 * @return Note ou Rien
+	 */
 	@PostMapping("/notes/add")
 	public ResponseEntity<Note> addNote(@Valid @RequestBody Note newNote) {
 		Note note = noteService.ajouterNote(newNote);

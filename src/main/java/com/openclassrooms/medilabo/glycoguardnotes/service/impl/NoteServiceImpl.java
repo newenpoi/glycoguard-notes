@@ -10,6 +10,11 @@ import com.openclassrooms.medilabo.glycoguardnotes.service.NoteService;
 
 import lombok.RequiredArgsConstructor;
 
+/**
+ * Mécanisme CRUD simple et flexible avec mongodb.
+ * @author newenpoi
+ *
+ */
 @Service
 @RequiredArgsConstructor
 public class NoteServiceImpl implements NoteService {
